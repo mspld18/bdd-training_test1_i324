@@ -60,6 +60,7 @@ module.exports = class CartItem {
 
     get total() {
         //TODO Implement this method
+        return this.quantity * this.price;
     }
     //endregion public methods
 
@@ -88,7 +89,6 @@ module.exports = class CartItem {
         if (price < 10) {
             throw new InvalidPriceException();
         }
-        return price;
     }
     //endregion private methods
 }
