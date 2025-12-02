@@ -55,7 +55,6 @@ module.exports = class CartItem {
         //TODO Implement this method
         this.#validatePrice(value);
         this.#_price = value;
-
     }
 
     get total() {
@@ -67,14 +66,20 @@ module.exports = class CartItem {
     //region private methods
     set #articleId(value) {
         //TODO Implement this method
+        this.#validateArticleId(value);
+        this.#_articleId = value;
     }
 
     set #name(value) {
         //TODO Implement this method
+        this.#_name = value;
     }
 
     #validateArticleId(articleId) {
         //TODO Implement this method
+        if (articleId < 1) {
+            throw new InvalidArticleIdException();
+        }
     }
 
     #validateQuantity(quantity) {
