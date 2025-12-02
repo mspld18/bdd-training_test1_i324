@@ -62,6 +62,7 @@ module.exports = class CartItem {
     //region private methods
     set #articleId(value) {
         //TODO Implement this method
+        this.#validateArticleId(value);
         this.#_articleId = value;
     }
 
@@ -72,6 +73,10 @@ module.exports = class CartItem {
 
     #validateArticleId(articleId) {
         //TODO Implement this method
+        if (articleId < 1) {
+            throw new InvalidArticleIdException();
+        }
+        return articleId;
     }
 
     #validateQuantity(quantity) {
