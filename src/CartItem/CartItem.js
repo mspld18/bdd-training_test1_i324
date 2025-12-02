@@ -25,14 +25,17 @@ module.exports = class CartItem {
 
     get articleId() {
         //TODO Implement this method
+        return this.#_articleId
     }
 
     get name() {
         //TODO Implement this method
+        return this.#_name;
     }
 
     get quantity() {
         //TODO Implement this method
+        return this.#_quantity;
     }
 
     set quantity(value) {
@@ -41,10 +44,15 @@ module.exports = class CartItem {
 
     get price() {
         //TODO Implement this method
+        return this.#_price;
+
     }
 
     set price(value) {
         //TODO Implement this method
+        this.#validatePrice(value);
+        this.#_price = value;
+
     }
 
     get total() {
@@ -71,6 +79,10 @@ module.exports = class CartItem {
 
     #validatePrice(price) {
         //TODO Implement this method
+        if (price < 10) {
+            throw new InvalidPriceException();
+        }
+        return price;
     }
     //endregion private methods
 }
