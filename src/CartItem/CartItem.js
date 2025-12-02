@@ -25,40 +25,49 @@ module.exports = class CartItem {
 
     get articleId() {
         //TODO Implement this method
+        return this.#_articleId;
     }
 
     get name() {
         //TODO Implement this method
+        return this.#_name;
     }
 
     get quantity() {
         //TODO Implement this method
+        return this.#_quantity;
     }
 
     set quantity(value) {
         //TODO Implement this method
+        this.#_quantity = value;
     }
 
     get price() {
         //TODO Implement this method
+        return this.#_price;
     }
 
     set price(value) {
         //TODO Implement this method
+        this.#_price = value;
     }
 
     get total() {
         //TODO Implement this method
+        return this.#_quantity * this.#_price;
     }
     //endregion public methods
 
     //region private methods
     set #articleId(value) {
         //TODO Implement this method
+        this.#_articleId = value;
     }
 
     set #name(value) {
         //TODO Implement this method
+        this.#_name = value;
     }
 
     #validateArticleId(articleId) {
